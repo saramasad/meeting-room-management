@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<title>Login with your account</title>
+
+<link href="${contextPath}/resources/Static/css/bootstrap.min.css"
+	rel="stylesheet">
+<link href="${contextPath}/resources/Static/css/common.css"
+	rel="stylesheet">
+<script src="${contextPath}/resources/Static/js/jquery.min.js"></script>
+<script src="${contextPath}/resources/Static/js/bootstrap.min.js"></script>
+<style>
+.customForm {
+	color: #555;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+}
+
+.header-Form {
+	border-radius: 4px;
+	background: #00BFF3 !important;
+	text-align: center;
+	color: #fff !important;
+	padding: 15px;
+	margin: 3px;
+	margin-bottom: 35px;
+}
+</style>
+</head>
+
+<body>
+<!-- container -->
+	<div class="container">
+
+		<form method="POST" action="${contextPath}/admin/login"
+			class="form-signin customForm">
+			<h3 class="form-heading header-Form">User Login</h3>
+
+			<div class="form-group ${error != null ? 'has-error' : ''}">
+				<span>${message}</span> <input name="username" type="text"
+					class="form-control" placeholder="Username" autofocus
+					required="required" title="Username cannot be empty" /> <input
+					name="password" type="password" class="form-control"
+					placeholder="Password" required="required"
+					title="Password cannot be empty" /> <span>${error}</span>
+				<hr />
+
+				<img src="${contextPath}${captchaPath}" name="captchaPath"
+					alt="CAPTCHA Image" /> <input type="hidden" name="captchaPath"
+					value="${captchaPath}" /> <input type="hidden" name="captchaCode"
+					value="${captchaCode}" />
+				<div class="form-group" style="margin-top: 10px;">
+					<input type="text" class="form-control" name="capachaText"
+						id="captcha_code" placeholder="Please enter the code in the box."
+						required="required" maxlength="6" pattern=".{6,6}"
+						title="6 characters minimum" /> <span class="help-block"
+						style="display: none;">Please enter the code displayed
+						within the image.</span>
+				</div>
+				<button class="btn btn-lg btn-primary btn-block" type="submit">Log
+					In</button>
+			
+			</div>
+
+		</form>
+
+	</div>
+	<!-- /container -->
+
+</body>
+</html>

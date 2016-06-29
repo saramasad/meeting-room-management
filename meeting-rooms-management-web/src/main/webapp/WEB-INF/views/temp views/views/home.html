@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<title>Welcome</title>
+
+<link href="${contextPath}/resources/css/bootstrap.min.css"
+	rel="stylesheet">
+<link href="${contextPath}/resources/css/bootstrap-theme.min.css"
+	rel="stylesheet">
+<link href="${contextPath}/resources/css/docs.min.css" rel="stylesheet">
+
+
+</head>
+<body style="margin: 0px; background: #f7f7f7;">
+	<div class="container">
+		<!-- header and main menu-->
+		<c:if test="${username ne null}">
+			<div
+				style="height: 50px; position: fixed; background: #e7e7e7; width: 100%; margin: 0px; border-bottom: 1px solid #d7d7d7">
+	<!-- could be a page header tag -->			<form id="logoutForm" method="GET"
+					action="${contextPath}/admin/logout"">
+					Welcome ${username} | <a
+						href="javascript:document.forms['logoutForm'].submit()">Logout</a>
+					<a href="${contextPath}/admin/changepassword">Change Password</a>
+				</form>
+
+
+			</div>
+
+		</c:if>
+
+		this is welcome page {Main menu}
+		<!-- 	<!-- could be a page header and main menu tag  -->
+	</div>
+	<!-- /container -->
+	<script src="${contextPath}/resources/js/jquery.min.js"></script>
+	<script src="${contextPath}/resources/js/bootstrap.min.js"></script>
+
+</body>
+</html>
